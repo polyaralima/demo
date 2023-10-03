@@ -30,7 +30,7 @@ public class AutorController {
     @GetMapping ("/listar-todos")
     @ResponseStatus(HttpStatus.OK)
     public List<Autor> findAll() {
-        return autorServiceService.listartodod();
+        return autorServiceService.listartodos();
     }
 
 

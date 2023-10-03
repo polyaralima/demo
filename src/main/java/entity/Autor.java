@@ -1,7 +1,7 @@
 package entity;
 
 
-import jakarta.validation.constraints.NotNull;
+
 import lombok.*;
 import java.io.Serializable;
 
@@ -14,7 +14,6 @@ public class Autor implements Serializable {
 
     private final Long id;
 
-    @NotNull
     private String nome;
 
     private String email;

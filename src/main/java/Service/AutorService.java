@@ -1,24 +1,30 @@
 package Service;
 
+import Repository.AutorRepository;
 import entity.Autor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class AutorService {
 
+
     @Autowired
+    private static AutorRepository repository;
     public static Autor create(Autor autor) {
         return autor.save(autor);
     }
-    public static List<Autor> getByAutor(Long id) {
-        return null;
-    }
 
+    public Optional<Autor> findById(Long id) {
+        return repository.findById(id);
+    }
     public static void delete(Long id) {
+        repository.deleteById(id);
     }
+    public List<Autor> listartodos() {
+        return repository.findAll();
 
-    public List<Autor> listartodod() {
-        return null;
     }
 }
